@@ -1,5 +1,4 @@
 import { Project, Skill, Experience, Education, ContactInfo, NavItem, Certification } from '../types';
-import React from 'react';
 
 export const personalInfo = {
   name: "Iskander Donet Ramos Morales",

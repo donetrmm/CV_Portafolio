@@ -1,4 +1,3 @@
-import React from 'react';
 import { Navigation } from './components/organisms/Navigation/Navigation';
 import Hero from './components/organisms/Hero/Hero';
 import { Footer } from './components/organisms/Footer/Footer';

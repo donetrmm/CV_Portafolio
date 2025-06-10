@@ -9,7 +9,6 @@ import {
   GitBranch,
   Container,
   Terminal,
-  Layers,
   Globe,
   Rocket,
   Zap,
@@ -31,7 +30,6 @@ import {
   Monitor,
   Palette,
   Workflow,
-  Package
 } from 'lucide-react';
 import { Skill } from '../../../types';
 

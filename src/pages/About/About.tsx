@@ -9,8 +9,6 @@ import {
   Award,
   Calendar,
   MapPin,
-  Lightbulb,
-  Target,
   Shield,
   Sparkles,
   CheckCircle2,
