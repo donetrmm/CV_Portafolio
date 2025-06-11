@@ -9,7 +9,7 @@ import Contact from './pages/Contact/Contact';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{ width: '100%', maxWidth: '100vw', overflowX: 'hidden' }}>
       <Navigation />
       <main>
         <Hero />
