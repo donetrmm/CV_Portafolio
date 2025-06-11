@@ -56,13 +56,13 @@ export const Navigation: React.FC = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-14 sm:h-16">
           <motion.div
             className="flex items-center"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
-            <h1 className="text-xl font-bold gradient-text">
+            <h1 className="text-lg sm:text-xl font-bold gradient-text">
               {personalInfo.name.split(' ')[0]}
             </h1>
           </motion.div>
@@ -104,11 +104,12 @@ export const Navigation: React.FC = () => {
           <div className="md:hidden">
             <motion.button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-white hover:text-primary-400 transition-colors duration-300"
+              className="text-white hover:text-primary-400 transition-colors duration-300 p-2 -mr-2"
               whileTap={{ scale: 0.95 }}
+              aria-label="Toggle mobile menu"
             >
               <svg
-                className="h-6 w-6"
+                className="h-5 w-5 sm:h-6 sm:w-6"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -133,12 +134,12 @@ export const Navigation: React.FC = () => {
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <div className="px-2 pt-2 pb-3 space-y-1 glass-effect border-t border-white/10">
+            <div className="px-4 pt-3 pb-4 space-y-2 glass-effect border-t border-white/10">
               {navigation.map((item, index) => (
                 <motion.button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium transition-all duration-300 ${
+                  className={`block w-full text-left px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 touch-manipulation ${
                     activeSection === item.id
                       ? 'bg-primary-600 text-white'
                       : 'text-gray-300 hover:text-white hover:bg-white/10'
@@ -146,16 +147,17 @@ export const Navigation: React.FC = () => {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
+                  style={{ minHeight: '44px' }}
                 >
                   {item.label}
                 </motion.button>
               ))}
-              <div className="pt-4">
+              <div className="pt-3">
                 <Button
                   href="#contact"
                   variant="primary"
                   size="sm"
-                  className="w-full"
+                  className="w-full justify-center"
                   icon="📧"
                 >
                   Contacto

@@ -31,13 +31,13 @@ export const Projects: React.FC = () => {
         {/* Section Header */}
         <motion.div
           ref={elementRef as any}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16 px-4 sm:px-0"
           initial={{ opacity: 0, y: 50 }}
           animate={isIntersecting ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.6 }}
         >
           <motion.span
-            className="text-primary-400 text-lg font-medium mb-4 block"
+            className="text-primary-400 text-base sm:text-lg font-medium mb-3 sm:mb-4 block"
             initial={{ opacity: 0 }}
             animate={isIntersecting ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -46,7 +46,7 @@ export const Projects: React.FC = () => {
           </motion.span>
           
           <motion.h2
-            className="text-4xl md:text-5xl font-bold gradient-text mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold gradient-text mb-4 sm:mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={isIntersecting ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.3 }}
@@ -55,7 +55,7 @@ export const Projects: React.FC = () => {
           </motion.h2>
           
           <motion.p
-            className="text-xl text-gray-300 max-w-3xl mx-auto"
+            className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0"
             initial={{ opacity: 0, y: 20 }}
             animate={isIntersecting ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -96,7 +96,7 @@ export const Projects: React.FC = () => {
 
         {/* Filter Buttons */}
         <motion.div
-          className="flex flex-wrap justify-center gap-4 mb-12"
+          className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 mb-8 sm:mb-12 px-4 sm:px-0"
           initial={{ opacity: 0, y: 30 }}
           animate={isIntersecting ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.7 }}
@@ -105,7 +105,7 @@ export const Projects: React.FC = () => {
             <motion.button
               key={filter.id}
               onClick={() => setActiveFilter(filter.id)}
-              className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+              className={`px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-lg font-medium transition-all duration-300 text-sm sm:text-base touch-manipulation ${
                 activeFilter === filter.id
                   ? 'bg-primary-600 text-white'
                   : 'bg-dark-100 text-gray-300 hover:bg-dark-200 hover:text-white'
@@ -115,11 +115,13 @@ export const Projects: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isIntersecting ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.3, delay: 0.7 + index * 0.1 }}
+              style={{ minHeight: '44px' }}
             >
-              <span className="mr-2">{filter.icon}</span>
-              {filter.label}
+              <span className="mr-1 sm:mr-2">{filter.icon}</span>
+              <span className="hidden xs:inline sm:inline">{filter.label}</span>
+              <span className="xs:hidden sm:hidden">{filter.label.split(' ')[0]}</span>
               {filter.id !== 'all' && (
-                <span className="ml-2 bg-primary-500 text-white px-2 py-1 rounded-full text-xs">
+                <span className="ml-1 sm:ml-2 bg-primary-500 text-white px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-xs">
                   {projects.filter(p => p.category === filter.id).length}
                 </span>
               )}
@@ -131,7 +133,7 @@ export const Projects: React.FC = () => {
         <AnimatePresence mode="wait">
           <motion.div
             key={activeFilter}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 px-4 sm:px-0"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

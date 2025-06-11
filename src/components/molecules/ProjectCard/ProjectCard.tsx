@@ -30,9 +30,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, delay = 0 }) 
     >
       <Card variant="glass" className="overflow-hidden h-full flex flex-col">
         {/* Project Image */}
-        <div className="relative h-48 bg-gradient-to-br from-primary-600 to-primary-800 flex items-center justify-center">
+        <div className="relative h-40 sm:h-48 bg-gradient-to-br from-primary-600 to-primary-800 flex items-center justify-center">
           <motion.div
-            className="text-6xl opacity-20"
+            className="text-4xl sm:text-5xl md:text-6xl opacity-20"
             animate={{ rotate: 360 }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           >
@@ -40,34 +40,34 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, delay = 0 }) 
           </motion.div>
           
           {project.featured && (
-            <div className="absolute top-4 right-4">
-              <span className="bg-accent-100 text-white px-2 py-1 rounded-full text-xs font-medium">
+            <div className="absolute top-2 sm:top-3 md:top-4 right-2 sm:right-3 md:right-4">
+              <span className="bg-accent-100 text-white px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-xs font-medium">
                 ⭐ Destacado
               </span>
             </div>
           )}
           
-          <div className="absolute top-4 left-4">
-            <span className="bg-dark-300/80 backdrop-blur-sm text-white px-2 py-1 rounded-full text-xs font-medium capitalize">
+          <div className="absolute top-2 sm:top-3 md:top-4 left-2 sm:left-3 md:left-4">
+            <span className="bg-dark-300/80 backdrop-blur-sm text-white px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-xs font-medium capitalize">
               {project.category}
             </span>
           </div>
         </div>
 
-        <div className="p-6 flex-1 flex flex-col">
+        <div className="p-4 sm:p-5 md:p-6 flex-1 flex flex-col">
           {/* Project Title */}
-          <h3 className="text-xl font-bold text-white mb-2 gradient-text">
+          <h3 className="text-lg sm:text-xl font-bold text-white mb-2 gradient-text leading-tight">
             {project.title}
           </h3>
 
           {/* Project Description */}
-          <p className="text-gray-300 mb-4 flex-1">
+          <p className="text-gray-300 mb-4 flex-1 text-sm sm:text-base leading-relaxed">
             {project.description}
           </p>
 
           {/* Technologies */}
-          <div className="mb-6">
-            <div className="flex flex-wrap gap-2">
+          <div className="mb-4 sm:mb-6">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2">
               {project.technologies.map((tech, index) => (
                 <motion.span
                   key={tech}
@@ -83,14 +83,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, delay = 0 }) 
           </div>
 
           {/* Action Buttons */}
-          <div className="flex gap-3 mt-auto">
+          <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mt-auto">
             {project.demoUrl && (
               <Button
                 href={project.demoUrl}
                 target="_blank"
                 variant="primary"
                 size="sm"
-                className="flex-1"
+                className="flex-1 justify-center"
                 icon="🚀"
               >
                 Demo
@@ -102,7 +102,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, delay = 0 }) 
                 target="_blank"
                 variant="secondary"
                 size="sm"
-                className="flex-1"
+                className="flex-1 justify-center"
                 icon="📂"
               >
                 Código
