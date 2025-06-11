@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ProjectCard } from '../../components/molecules/ProjectCard/ProjectCard';
-import { Button } from '../../components/atoms/Button/Button';
 import { projects } from '../../utils/data';
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 
