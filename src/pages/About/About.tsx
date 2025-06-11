@@ -1,10 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Code2, 
-  Database, 
   Server, 
-  Wrench, 
   GraduationCap, 
   Award,
   Calendar,
@@ -14,7 +11,7 @@ import {
   CheckCircle2,
   Building
 } from 'lucide-react';
-import { skills as skillsData, education, certifications } from '../../utils/data';
+import { education, certifications } from '../../utils/data';
 
 const statsData = [
   { label: 'Años de Experiencia', value: '2+', icon: Calendar, color: 'from-cyan-400 to-blue-500' },
@@ -50,22 +47,7 @@ const valuesData = [
   }
 ];
 
-const skillCategories = {
-  frontend: { icon: Code2, title: 'Frontend', color: 'text-cyan-400' },
-  backend: { icon: Server, title: 'Backend', color: 'text-purple-400' },
-  database: { icon: Database, title: 'Bases de Datos', color: 'text-green-400' },
-  tools: { icon: Wrench, title: 'Herramientas', color: 'text-orange-400' },
-  mobile: { icon: Code2, title: 'Mobile', color: 'text-pink-400' }
-};
-
 const About: React.FC = () => {
-  const groupedSkills = skillsData.reduce((acc, skill) => {
-    if (!acc[skill.category]) {
-      acc[skill.category] = [];
-    }
-    acc[skill.category].push(skill);
-    return acc;
-  }, {} as Record<string, typeof skillsData>);
 
   return (
     <section id="about" className="py-20 relative overflow-hidden bg-black">

@@ -165,40 +165,6 @@ export const Projects: React.FC = () => {
             </p>
           </motion.div>
         )}
-
-        {/* CTA Section */}
-        <motion.div
-          className="text-center mt-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isIntersecting ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6, delay: 1 }}
-        >
-          <div className="glass-effect rounded-2xl p-8 inline-block">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              ¿Interesado en colaborar?
-            </h3>
-            <p className="text-gray-300 mb-6 max-w-md">
-              Siempre estoy abierto a nuevos proyectos y oportunidades interesantes.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                href="#contact"
-                variant="primary"
-                icon="💬"
-              >
-                Hablemos
-              </Button>
-              <Button
-                href="https://github.com/alexdev"
-                target="_blank"
-                variant="secondary"
-                icon="📂"
-              >
-                Ver Más en GitHub
-              </Button>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
